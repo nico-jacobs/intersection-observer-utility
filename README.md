@@ -1,7 +1,7 @@
 # IOU (intersection observer utility)
 
 This plugin observes elements and sets data attributes accordingly to the state.
-Also it emits a custom event every time the element comes into the viewport or leaves the viewport.
+Also, it emits a custom event every time the element comes into the viewport or leaves the viewport.
 
 ### Installing
 
@@ -57,7 +57,7 @@ than you can initilice it like:
 If your Plugin is initialized, you need to add a selector to all the html elements that you want to observe.
 The Default selector for that is the data attribute data-iou-trigger.
 
-The plugin than will attach the data attributes accordingly to the position to the viewport.
+The plugin then will attach the data attributes accordingly to the position to the viewport.
 
 | Data Attribute     | Default           | Options                                                     | Description                                                                                                                                                                                               |
 | :------------      | :------------     | :------------                                               | :------------                                                                                                                                                                                             |
@@ -67,12 +67,12 @@ The plugin than will attach the data attributes accordingly to the position to t
 | data-iou-visible   | set by the plugin | true, fals                                                  | Shows if element is in viewport or not                                                                                                                                                                    |
 | data-iou-direction | set by the plugin | visible-top,invisible-top, visible-bottom, invisible-bottom | visible-top = element came from top<br>invisble-top = element left the viewport on the top<br>visible-bottom = element came from bottom<br>invisble-bottom = element left the viewport on the bottom side |
 
-Now you can style the elements, based on theire data-attribute values.
+Now you can style the elements, based on their data-attribute values.
 A Demo will follow soon.
 
-Also the intersection of elements will emit a custom event on the document, that you can listen to.
+Also, the intersection of elements will emit a custom event on the document, that you can listen to.
 
-<strong> Example:
+<strong> Example:</strong>
 ```
 bindListener: () => {
 
@@ -113,5 +113,3 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 ## Acknowledgments
 
 This Plugin was inspired by [AOS ](https://michalsnik.github.io/aos/) Animate On Scroll Library
-
-
