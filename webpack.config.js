@@ -10,7 +10,7 @@ module.exports = {
     mode: ( process.env.NODE_ENV ? process.env.NODE_ENV : 'development' ),
 
     // entry file(s)
-    entry: './src/index.js',
+    entry: './src/iou.js',
 
     // output file(s) and chunks
     output: {
@@ -19,7 +19,7 @@ module.exports = {
         globalObject: '(typeof self !== "undefined" ? self : this)',
         libraryExport: 'default',
         path: path.resolve(__dirname, 'dist'),
-        filename: 'index.js',
+        filename: 'iou.js',
         publicPath: config.get('publicPath')
     },
 

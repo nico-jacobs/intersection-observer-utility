@@ -1,16 +1,16 @@
 {
-  "private": true,
-  "name": "intersection observer utility",
-  "version": "1.0.0",
-  "description": "VanillaJS plugin intersection observer utility",
-  "main": "dist/index.js",
+  "private": false,
+  "name": "intersection-observer-utility",
+  "version": "1.0.2",
+  "description": "VanillaJS plugin Intersection observer utility",
+  "main": "dist/iou.js",
   "scripts": {
     "build": "NODE_ENV=production webpack",
     "start": "webpack-dev-server"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/thatisuday/js-plugin-starter.git"
+    "url": "https://github.com/nico-jacobs/intersection-observer-utility.git"
   },
   "keywords": [],
   "author": "Uday Hiwarale <thatisuday@gmail.com>",
@@ -18,7 +18,7 @@
   "bugs": {
     "url": "https://github.com/thatisuday/js-plugin-starter/issues"
   },
-  "homepage": "https://github.com/thatisuday/js-plugin-starter#readme",
+  "homepage": "https://github.com/nico-jacobs/intersection-observer-utility#readme",
   "devDependencies": {
     "@babel/core": "^7.7.5",
     "@babel/plugin-proposal-class-properties": "^7.7.4",
