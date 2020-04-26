@@ -35,18 +35,18 @@ export class Iou {
         attributeVisible: 'data-iou-visible', // this has to be a data-attribute
         attributeVisibleTrue: 'true', // this has to be a data-attribute
 
-        attributeVisibleTop: 'visible-top', // this has to be a data-attribute value
-        attributeVisibleBottom: 'visible-bottom', // this has to be a data-attribute value
-        attributeInVisibleTop: 'invisible-top', // this has to be a data-attribute value
-        attributeInVisibleBottom: 'invisible-bottom', // this has to be a data-attribute value
+        attributeVisibleTop: 'visible-top', // this has to be a string
+        attributeVisibleBottom: 'visible-bottom', // this has to be a string
+        attributeInVisibleTop: 'invisible-top', // this has to be a string
+        attributeInVisibleBottom: 'invisible-bottom', // this has to be a string
 
-        attributeVisibleFalse: 'false', // this has to be a data-attribute
+        attributeVisibleFalse: 'false', // this has to be a string
         attributeDirection: 'data-iou-direction', // this has to be a data-attribute
         attributeRelation: 'data-iou-relation', // this has to be a data-attribute
-        attributeRelationCurrent: 'current', // this has to be a data-attribute
-        attributeRelationPrev: 'prev', // this has to be a data-attribute
-        attributeRelationNext: 'next', // this has to be a data-attribute
-        siblingsFilter: 'iou-section',
+        attributeRelationCurrent: 'current', // this has to be a string
+        attributeRelationPrev: 'prev', // this has to be a string
+        attributeRelationNext: 'next', // this has to be a string
+        siblingsFilter: 'iou-section', // deprecated todo remove!!!
       },
       functions: {
         setVisible(entryCurrents, entryPrevs, entryNexts,) {
