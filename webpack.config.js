@@ -38,12 +38,6 @@ module.exports = {
         ]
     },
 
-    plugins: [
-        new HTMLWebpackPlugin({
-            template: path.resolve(__dirname, 'index.html')
-        })
-    ],
-
     // development server configuration
     devServer: {
       allowedHosts: [
@@ -58,5 +52,5 @@ module.exports = {
     },
 
     // generate source map
-    devtool: ( 'production' === process.env.NODE_ENV ? 'source-map' : 'cheap-module-eval-source-map' ),
+    // devtool: ( 'production' === process.env.NODE_ENV ? 'source-map' : 'cheap-module-eval-source-map' ),
 };

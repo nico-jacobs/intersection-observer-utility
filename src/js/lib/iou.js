@@ -20,6 +20,8 @@ export class Iou {
     this.functions = settings.functions;
     this.initialized = false;
     this.pageHasScrolled = false;
+
+
   }
 
   mergeCustomDefaultOptions(customOptions, self) {
@@ -102,6 +104,7 @@ export class Iou {
    */
 
   init() {
+
 
     this.IntersectionWatcher();
 

@@ -3,44 +3,41 @@
 This plugin observes elements and sets data attributes accordingly to the state.
 Also it emits a custom event every time the element comes into the viewport or leaves the viewport.
 
-## Getting Started
-
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
-
-### Prerequisites
-
-What things you need to install the software and how to install them
-
-```
-Give examples
-```
-
 ### Installing
 
-A step by step series of examples that tell you how to get a development env running
-
-Say what the step will be
+#### install via npm
 
 ```
-Give the example
+npm i intersection-observer-utility --save
 ```
 
-And repeat
+And in your js 
 
 ```
-until finished
+import Iou from 'intersection-observer-utility'
+
+document.addEventListener('DOMContentLoaded', () => {
+    const myIouInstance = new Iou({
+        elementTrigger: '[data-iou-trigger]',
+    });
+    // initialize
+    myIouInstance.init();
+});
+
 ```
 
-End with an example of getting some data out of the system or using it for a little demo
+#### install it the old way
 
 
 ```
 Give an example
 ```
 
-## Deployment
 
-Add additional notes about how to deploy this on a live system
+## Getting Started
+
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+
 
 ## Built With
 
