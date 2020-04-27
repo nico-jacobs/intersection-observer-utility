@@ -1,7 +1,7 @@
 {
   "private": false,
   "name": "intersection-observer-utility",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "VanillaJS plugin Intersection observer utility",
   "main": "dist/iou.js",
   "scripts": {
