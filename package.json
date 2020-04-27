@@ -1,9 +1,17 @@
 {
+<<<<<<< Updated upstream
   "private": true,
   "name": "intersection observer utility",
   "version": "1.0.0",
   "description": "VanillaJS plugin intersection observer utility",
   "main": "dist/index.js",
+=======
+  "private": false,
+  "name": "intersection-observer-utility",
+  "version": "1.0.4",
+  "description": "VanillaJS plugin Intersection observer utility",
+  "main": "dist/iou.js",
+>>>>>>> Stashed changes
   "scripts": {
     "build": "NODE_ENV=production webpack",
     "start": "webpack-dev-server"
