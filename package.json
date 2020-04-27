@@ -1,7 +1,7 @@
 {
   "private": false,
   "name": "intersection-observer-utility",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "VanillaJS plugin Intersection observer utility",
   "main": "dist/iou.js",
   "scripts": {
@@ -47,9 +47,7 @@
     "style-loader": "^1.0.1",
     "webpack": "^4.41.2",
     "webpack-cli": "^3.3.10",
-    "webpack-dev-server": "^3.9.0"
-  },
-  "dependencies": {
+    "webpack-dev-server": "^3.9.0",
     "@babel/polyfill": "^7.8.7",
     "events-polyfill": "^2.1.2",
     "intersection-observer": "^0.7.0"
