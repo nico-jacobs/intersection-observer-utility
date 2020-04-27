@@ -12,11 +12,16 @@
     "type": "git",
     "url": "https://github.com/nico-jacobs/intersection-observer-utility.git"
   },
-  "keywords": [],
-  "author": "Uday Hiwarale <thatisuday@gmail.com>",
-  "license": "ISC",
+  "keywords": [
+    "Frontend",
+    "Intersection Observer",
+    "Vanilla js",
+    "CSS Animation"
+  ],
+  "author": "Nico Jacobs <cojaco65@gmail.com>",
+  "license": "MIT",
   "bugs": {
-    "url": "https://github.com/thatisuday/js-plugin-starter/issues"
+    "url": "https://github.com/nico-jacobs/intersection-observer-utility/issues"
   },
   "homepage": "https://github.com/nico-jacobs/intersection-observer-utility#readme",
   "devDependencies": {
