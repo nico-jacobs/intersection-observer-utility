@@ -35,7 +35,7 @@ and load it before body end tag e.g.
 <script src="yourDomain.com/js/iou.js"></script>
 ```
 
-than you can initilice it like:
+than you can initilize it like:
 
 ```
 <script>
@@ -54,7 +54,7 @@ than you can initilice it like:
 
 ## Getting Started
 
-If your Plugin is initialized, you need to add a selector to all the html elements that you want to observe.
+If your Plugin is initialized, you need to add a selector to all the HTML elements that you want to observe.
 The Default selector for that is the data attribute data-iou-trigger.
 
 The plugin then will attach the data attributes accordingly to the position to the viewport.
