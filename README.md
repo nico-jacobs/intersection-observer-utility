@@ -3,6 +3,11 @@
 This plugin observes elements and sets data attributes accordingly to the state.
 Also, it emits a custom event every time the element comes into the viewport or leaves the viewport.
 
+## Getting Started
+
+A simple <strong>Demo</strong> can be found on codepen: [https://codepen.io/cojaco/pen/rNOmPoK](https://codepen.io/cojaco/pen/rNOmPoK)
+
+
 ### Installing
 
 #### install via npm
