@@ -1,9 +1,7 @@
 /*******************************************************************************
  * IMPORTS
  *******************************************************************************/
-import {mergeDeep} from '../util/mergeDeep';
 
-// import { disableBodyScroll, enableBodyScroll /*, clearAllBodyScrollLocks */ } from 'body-scroll-lock';
 
 /*******************************************************************************
  * CE MENU
