@@ -34,7 +34,6 @@ export function setVisible(entryCurrents, entryPrevs, entryNexts, IouInstance) {
 }
 
 
-
 export function setInVisible(entryCurrents, entryPrevs, entryNexts, IouInstance) {
   let dataVisible = IouInstance.strings.attributeVisible;
   let dataVisibleFalse = IouInstance.strings.attributeVisibleFalse;
@@ -43,24 +42,27 @@ export function setInVisible(entryCurrents, entryPrevs, entryNexts, IouInstance)
   let dataRelation = IouInstance.strings.attributeRelation;
   let dataRelationCurrent = IouInstance.strings.attributeRelationCurrent;
 
+  if (entryPrevs) {
+    entryCurrents.forEach(function (targetEl) {
+      targetEl.setAttribute(dataVisible, dataVisibleFalse);
+    });
+  }
 
+  if (entryPrevs) {
+    entryPrevs.forEach(function (prevEl) {
+      if (prevEl.getAttribute(dataVisible) === dataVisibleTrue) {
+        prevEl.setAttribute(dataRelation, dataRelationCurrent);
+      }
+    });
+  }
 
-  entryCurrents.forEach(function (targetEl) {
-    targetEl.setAttribute(dataVisible, dataVisibleFalse);
-  });
-
-  entryPrevs.forEach(function (prevEl) {
-    if (prevEl.getAttribute(dataVisible) === dataVisibleTrue) {
-      prevEl.setAttribute(dataRelation, dataRelationCurrent);
-    }
-  });
-
-  entryNexts.forEach(function (nextEl) {
-    if (nextEl.getAttribute(dataVisible) === dataVisibleTrue) {
-      nextEl.setAttribute(dataRelation, dataRelationCurrent);
-    }
-  });
-
+  if (entryNexts) {
+    entryNexts.forEach(function (nextEl) {
+      if (nextEl.getAttribute(dataVisible) === dataVisibleTrue) {
+        nextEl.setAttribute(dataRelation, dataRelationCurrent);
+      }
+    });
+  }
 }
 
 export function setDirection(entryCurrents, posVal, IouInstance) {
@@ -77,14 +79,17 @@ export function setRelation(entryPrevs, entryNexts, IouInstance) {
   let dataRelation = IouInstance.strings.attributeRelation;
   let dataRelationNext = IouInstance.strings.attributeRelationNext;
   let dataRelationPrev = IouInstance.strings.attributeRelationPrev;
+  if (entryNexts) {
+    entryNexts.forEach(function (nextEl) {
+      nextEl.setAttribute(dataRelation, dataRelationNext);
+    });
+  }
 
-  entryNexts.forEach(function (nextEl) {
-    nextEl.setAttribute(dataRelation, dataRelationNext);
-  });
-
-  entryPrevs.forEach(function (prevEl) {
-    prevEl.setAttribute(dataRelation, dataRelationPrev);
-  });
+  if (entryPrevs) {
+    entryPrevs.forEach(function (prevEl) {
+      prevEl.setAttribute(dataRelation, dataRelationPrev);
+    });
+  }
 
 }
 
