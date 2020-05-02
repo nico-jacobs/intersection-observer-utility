@@ -15,19 +15,24 @@ export function setVisible(entryCurrents, entryPrevs, entryNexts, IouInstance) {
   let dataRelationNext = IouInstance.strings.attributeRelationNext;
   let dataRelationPrev = IouInstance.strings.attributeRelationPrev;
 
+  if (entryCurrents) {
+    entryCurrents.forEach(function (targetEl) {
+      targetEl.setAttribute(dataVisible, dataVisibleTrue);
+      targetEl.setAttribute(dataRelation, dataRelationCurrent);
+    });
+  }
 
-  entryCurrents.forEach(function (targetEl) {
-    targetEl.setAttribute(dataVisible, dataVisibleTrue);
-    targetEl.setAttribute(dataRelation, dataRelationCurrent);
-  });
+  if (entryPrevs) {
+    entryPrevs.forEach(function (prevEl) {
+      prevEl.setAttribute(dataRelation, dataRelationPrev);
+    });
+  }
 
-  entryPrevs.forEach(function (prevEl) {
-    prevEl.setAttribute(dataRelation, dataRelationPrev);
-  });
-
-  entryNexts.forEach(function (nextEl) {
-    nextEl.setAttribute(dataRelation, dataRelationNext);
-  });
+  if (entryPrevs) {
+    entryNexts.forEach(function (nextEl) {
+      nextEl.setAttribute(dataRelation, dataRelationNext);
+    });
+  }
 
 }
 
@@ -40,7 +45,7 @@ export function setInVisible(entryCurrents, entryPrevs, entryNexts, IouInstance)
   let dataRelation = IouInstance.strings.attributeRelation;
   let dataRelationCurrent = IouInstance.strings.attributeRelationCurrent;
 
-  if (entryPrevs) {
+  if (entryCurrents) {
     entryCurrents.forEach(function (targetEl) {
       targetEl.setAttribute(dataVisible, dataVisibleFalse);
     });

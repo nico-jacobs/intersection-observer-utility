@@ -116,12 +116,14 @@ export class Iou {
 
   setEntryRelation(el) {
     let IouInstance = this;
-    let targetString = el.getAttribute(IouInstance.strings.attributeTarget);
+    let targetAttribute = this.strings.attributeTarget;
+    let targetAttributeVal = el.getAttribute(targetAttribute);
 
-    if (targetString.indexOf(',') !== -1) {
+    if (targetAttributeVal) {
+    if (targetAttributeVal.indexOf(',') !== -1) {
       // the target string contains a comma and ist therefore most likely an array
       let re = /,\s/; // split on colon space or comma space
-      let targetArray = targetString.split(re);
+      let targetArray = targetAttributeVal.split(re);
 
       targetArray.forEach(function (targetSel) {
         let currentEls = document.querySelectorAll(targetSel);
@@ -133,14 +135,18 @@ export class Iou {
         el.targetEls = currentEls;
       })
     } else {
-      let currentEls = document.querySelectorAll(targetString);
+      let currentEls = document.querySelectorAll(targetAttributeVal);
       currentEls.forEach(function (currentEl) {
         el.siblingsNext = iouFunctions.getNextSiblings(currentEl);
         el.siblingsPrev = iouFunctions.getPreviousSiblings(currentEl);
       });
       el.targetEls = currentEls;
     }
-
+    } else {
+      let currentEls = [];
+      currentEls.push(el);
+      el.targetEls = currentEls;
+    }
   };
 
   IntersectionWatcher() {
@@ -155,7 +161,6 @@ export class Iou {
 
     observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
-        console.log(entry.target.targetEls);
         this.entryLogicIn(entry);
         this.entryLogicOut(entry);
       });
