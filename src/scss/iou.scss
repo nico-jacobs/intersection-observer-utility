@@ -1,0 +1,136 @@
+// the part for the scrollframe
+
+.iou-scrollframe {
+    counter-reset: section;
+    list-style: none;
+    list-style-type: none;
+    margin: 0;
+    position: relative;
+
+    ol & {
+        right: 0;
+    }
+
+    &__item {
+        background: #ccc;
+        color: #FFF;
+        font-size: 1.953rem;
+        list-style: none;
+        margin: 0;
+        min-height: 25vh;
+        outline: solid 1px #000;
+        position: relative;
+        text-align: center;
+        width: 25vh;
+
+        &::before {
+            content: counters(section, ".") " ";
+            counter-increment: section;
+            left: 0;
+            position: absolute;
+        }
+
+        span {
+            display: block;
+            font-size: .8rem;
+        }
+    }
+}
+
+// the part for the sections
+
+.iou-section {
+    background: #ccc;
+    font-family: 'Helvetica', Verdana, sans;
+    height: 100vh;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    transform: translateY(100%);
+    transition: transform .3s ease-in-out;
+    width: 100%;
+    z-index: 0;
+
+    &[data-iou-visible="true"] {
+        transform: translateY(0);
+    }
+
+    &[data-iou-visible="false"][data-iou-relation="prev"],
+    &[data-iou-visible="true"][data-iou-relation="prev"] {
+        transform: translateY(-100%);
+    }
+
+    &[data-iou-visible="false"][data-iou-relation="next"],
+    &[data-iou-visible="true"][data-iou-relation="next"] {
+        transform: translateY(100%);
+    }
+
+    &[data-iou-visible="true"][data-iou-relation="current"] {
+        transform: translateY(0);
+        z-index: 1;
+    }
+
+    &__bg {
+        height: 100vh;
+        margin: 0;
+        max-height: 100vh;
+        position: absolute;
+        width: 100vw;
+        object-fit: cover;
+    }
+
+    &__title,
+    &__txt {
+        color: #fff;
+        display: block;
+        position: absolute;
+        transition: transform .3s ease-in-out .3s;
+
+        &:before {
+            background: rgba(0, 0, 0, .5);
+            bottom: 0;
+            content: '';
+            left: 0;
+            position: absolute;
+            right: 0;
+            top: 0;
+            z-index: -1;
+        }
+    }
+
+    &__title {
+        left: 0;
+        padding: 20px;
+        right: auto;
+        top: 30px;
+        transform: translateX(-100%);
+
+    }
+
+    &__txt {
+        right: 0;
+        padding: 20px;
+        left: auto;
+        bottom: 30px;
+        transform: translateX(100%);
+
+        a {
+            color: #fff;
+            font-weight: bold;
+        }
+    }
+
+    &[data-iou-visible="true"][data-iou-relation="current"] {
+        .iou-section__title,
+        .iou-section__txt {
+            transform: translateX(0);
+        }
+    }
+
+}
+
+.center {
+    height: 100vh;
+    overflow: hidden;
+    width: 100%;
+}
