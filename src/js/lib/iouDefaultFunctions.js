@@ -17,20 +17,26 @@ export function setVisible(entryCurrents, entryPrevs, entryNexts, IouInstance) {
 
   if (entryCurrents) {
     entryCurrents.forEach(function (targetEl) {
-      targetEl.setAttribute(dataVisible, dataVisibleTrue);
-      targetEl.setAttribute(dataRelation, dataRelationCurrent);
+      requestAnimationFrame(function() {
+        targetEl.setAttribute(dataVisible, dataVisibleTrue);
+        targetEl.setAttribute(dataRelation, dataRelationCurrent);
+      })
     });
   }
 
   if (entryPrevs) {
     entryPrevs.forEach(function (prevEl) {
-      prevEl.setAttribute(dataRelation, dataRelationPrev);
+      requestAnimationFrame(function() {
+        prevEl.setAttribute(dataRelation, dataRelationPrev);
+      })
     });
   }
 
   if (entryPrevs) {
     entryNexts.forEach(function (nextEl) {
-      nextEl.setAttribute(dataRelation, dataRelationNext);
+      requestAnimationFrame(function() {
+        nextEl.setAttribute(dataRelation, dataRelationNext);
+      })
     });
   }
 
@@ -47,14 +53,18 @@ export function setInVisible(entryCurrents, entryPrevs, entryNexts, IouInstance)
 
   if (entryCurrents) {
     entryCurrents.forEach(function (targetEl) {
-      targetEl.setAttribute(dataVisible, dataVisibleFalse);
+      requestAnimationFrame(function() {
+        targetEl.setAttribute(dataVisible, dataVisibleFalse);
+      })
     });
   }
 
   if (entryPrevs) {
     entryPrevs.forEach(function (prevEl) {
       if (prevEl.getAttribute(dataVisible) === dataVisibleTrue) {
-        prevEl.setAttribute(dataRelation, dataRelationCurrent);
+        requestAnimationFrame(function() {
+          prevEl.setAttribute(dataRelation, dataRelationCurrent);
+        })
       }
     });
   }
@@ -62,7 +72,9 @@ export function setInVisible(entryCurrents, entryPrevs, entryNexts, IouInstance)
   if (entryNexts) {
     entryNexts.forEach(function (nextEl) {
       if (nextEl.getAttribute(dataVisible) === dataVisibleTrue) {
-        nextEl.setAttribute(dataRelation, dataRelationCurrent);
+        requestAnimationFrame(function() {
+          nextEl.setAttribute(dataRelation, dataRelationCurrent);
+        })
       }
     });
   }
@@ -72,7 +84,9 @@ export function setDirection(entryCurrents, posVal, IouInstance) {
   let dataAttr = IouInstance.strings.attributeDirection;
 
   entryCurrents.forEach(function (targetEl) {
-    targetEl.setAttribute(dataAttr, posVal);
+    requestAnimationFrame(function() {
+      targetEl.setAttribute(dataAttr, posVal);
+    })
   });
 
 
@@ -84,13 +98,17 @@ export function setRelation(entryPrevs, entryNexts, IouInstance) {
   let dataRelationPrev = IouInstance.strings.attributeRelationPrev;
   if (entryNexts) {
     entryNexts.forEach(function (nextEl) {
-      nextEl.setAttribute(dataRelation, dataRelationNext);
+      requestAnimationFrame(function() {
+        nextEl.setAttribute(dataRelation, dataRelationNext);
+      })
     });
   }
 
   if (entryPrevs) {
     entryPrevs.forEach(function (prevEl) {
-      prevEl.setAttribute(dataRelation, dataRelationPrev);
+      requestAnimationFrame(function() {
+        prevEl.setAttribute(dataRelation, dataRelationPrev);
+      })
     });
   }
 
